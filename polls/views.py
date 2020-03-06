@@ -13,4 +13,8 @@ def index(request):
     template = loader.get_template('polls/index.html')
     return HttpResponse(template.render(context, request))
 
+def makeEvent(request):
+    return HttpResponse(template)
+
+
 # Create your views here.

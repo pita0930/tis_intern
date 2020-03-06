@@ -16,7 +16,7 @@ class Event(models.Model):
     join = models.IntegerField(default=0)
     planning_number = models.IntegerField(default=0)
     thanks = models.CharField(max_length=200, default='地域体験を書こう')
-    user = models.ForeignKey(User,null=True, on_delete=models.PROTECT)
+    user = models.ForeignKey(User,null=True, on_delete=DO_NOTHING)
 
     def __str__(self):
         return self.event_name
