@@ -1,7 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
+from .models import User
+from .models import Event
 
 def index(request):
-    return HttpResponse("Hello, world. you are at the polls index.")
+
+    events = Event.objects.all()
+    context = {
+        'events':events
+    }
+    template = loader.get_template('polls/index.html')
+    return HttpResponse(template.render(context, request))
 
 # Create your views here.
