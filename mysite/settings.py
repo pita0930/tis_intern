@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            #'builtins':[
+            #    'bootstrap4.templatetags.bootstrap4',
+            #],
+
         },
     },
 ]
@@ -123,3 +128,17 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# 管理サイトのログイン機能を通常のログイン機能として使う
+LOGIN_URL='admin:login'
+LOGOUT_REDIRECT_URL='/'
+
+# django-crispy-forms 設定
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
