@@ -1,0 +1,5 @@
+@charset "utf-8";
+body {
+    background: white url("images/bandaisan.gif") no-repeat;
+}
+h1 {color: red;}

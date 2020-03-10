@@ -8,7 +8,9 @@ class EventForm(ModelForm):
 
     class Meta:
         model = Event
-        fields = ('event_name', 'place', 'help', 'parttime', 'join', 'planning_number', 'thanks', 'user')
+        fields = ('event_name', 'picture', 'place', 'help', 'parttime', 'join', 'planning_number', 'thanks', 'user')
+
+
 
 
 class CommentModelForm(forms.ModelForm):

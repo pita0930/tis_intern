@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'bootstrap4',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -67,9 +67,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            #'builtins':[
-            #    'bootstrap4.templatetags.bootstrap4',
-            #],
+            'builtins':[
+                'bootstrap4.templatetags.bootstrap4',
+            ],
 
         },
     },
@@ -126,14 +126,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'images')
+MEDIA_URL = '/images/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    '/var/www/static/',
 ]
 
 # 管理サイトのログイン機能を通常のログイン機能として使う

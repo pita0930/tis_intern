@@ -12,7 +12,7 @@ class User(models.Model):
 class Event(models.Model):
 
     event_name = models.CharField(max_length=100, default='タイトル')
-    #picture = models.ImageField(upload_to='media/')
+    picture = models.ImageField(upload_to='media/', blank=True, null=True)
     place = models.CharField(max_length=100, default='地域を選ぼう', null=True)
     help = models.CharField(max_length=200, default='手伝いを書こう')
     parttime = models.IntegerField(default=0)
