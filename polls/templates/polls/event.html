@@ -1,4 +1,4 @@
-
+{%load bootstrap4 %}
 <!DOCTYPE html>
 {% load static %}
 <html>
@@ -7,26 +7,31 @@
     <link rel="stylesheet" type="text/css" href="{% static 'polls/css/event.css'%}">
     <title>Otetsudaizu!</title>
 </head>
-<h1>Otetsudaizu!</h1>
+
 <body>
+<h1>Otetsudaizu!</h1>
     <table>
         <tbody>
-            <button type="button" class="btn btn-primary"><p><a href="http://127.0.0.1:8000/mypage">マイページ</a></p></button>
-            <p><a href="http://127.0.0.1:8000/makeevent">企画する</a></p>
+            <ul class="sample3">
+                <li><a href="http://127.0.0.1:8000/mypage"><p style="font-size:16px">マイページ</p></a></li>
+                <li><a href="http://127.0.0.1:8000/makeevent"><p style="font-size:16px">企画する</p></a></li>
+                <li><a href="http://127.0.0.1:8000/talk"><p style="font-size:16px">トーク一覧</p></a></li>
+            </ul>
             <h2>おすすめ企画一覧</h2>
             {% if events %}
                 {% for event in events%}
-                <tr>
-                    <h4 class="card-title">{{event.event_name}}</h4>
-                    <div class ="image">
-                    <img src="/{{event.picture}}" style="width:300px;height:auto">
+                <p class="above">
+                    <div class="card">
+                        <img src="{% static "polls/images/bandaisan.jpg"%}" width="500" height="300">
+                        <div class="container">
+                            <h3 class="card-title">{{event.event_name}}</h3>
+                            <p class="card-title">場所：{{event.place}}</p>
+                            <p class="card-title">企画者：{{event.user}}</p>
+                            <p class="card-text">お礼：{{event.thanks}}</p>
+                            <button class="talk1" type="submit">トーク</button>
+                        </div>
                     </div>
-                    <div class="card-body">
-                    <h5 class="card-title">{{event.place}}</h5>
-                    <h5 class="card-title">{{event.user}}</h5>
-                    <p class="card-text">{{event.thanks}}</p>
-                    <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
-                <tr>
+                </p>
                 {% endfor %}
             {% else %}
                 <tr>
@@ -35,5 +40,11 @@
             {% endif %}
         </tbody>
     </table>
+    <ul class="place">
+      <li>金山</li>
+      <li>只見</li>
+      <li>西会津</li>
+      <li>中小屋</li>
+    </ul>
 </body>
 </html>

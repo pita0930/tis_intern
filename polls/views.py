@@ -7,12 +7,8 @@ from .forms import EventForm
 
 
 def index(request):
-    events = Event.objects.all()
-    context = {
-        'events': events
-    }
-    template = loader.get_template('polls/index.html')
-    return HttpResponse(template.render(context, request))
+
+    return HttpResponse("Hello!")
 
 def event(request):
 
@@ -39,9 +35,9 @@ def event_new(request):
     return render(request, 'polls/event_new.html', {'form':form,})
 
 def my_page(request):
-    users = User.objects.all()
+    events = Event.objects.all()
     context = {
-        'users': users
+        'events': events
     }
     template = loader.get_template('polls/my_page.html')
     return HttpResponse(template.render(context, request))

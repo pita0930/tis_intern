@@ -1,12 +1,24 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head lang="ja">
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/css/talk1.css'%}">
     <title>Otetsudaizu</title>
 </head>
-<h1>Talk1</h1>
 <body>
-    <p><a href="http://127.0.0.1:8000/event">イベントページに戻る</a></p>
-    <p><a href="http://127.0.0.1:8000/makeevent">企画する</a></p>
-    <p><a href="http://127.0.0.1:8000/mypage">マイページ</a></p>
+    <h1>Otetsudaizu!</h1>
+    <ul class="sample3">
+        <li><a href="http://127.0.0.1:8000/event"><p style="font-size:20px">戻る</p></a></li>
+    </ul>
+    <h1>トーク一覧</h1>
+
+    <ul class="user">
+        <li>Yuki_Matsushita</li>
+        <li>Ryo_Kanazawa</li>
+        <li>Sora_Okada</li>
+        <li>Ogi_Kentaro</li>
+        <li>Takayoshi_Fujita</li>
+        <li>Masaru</li>
+    </ul>
 </body>

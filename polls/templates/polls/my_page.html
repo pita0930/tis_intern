@@ -1,12 +1,48 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head lang="ja">
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/css/my_page.css'%}">
     <title>Otetsudaizu</title>
 </head>
-<h1>マイページ</h1>
-<body>
-    <p><a href="http://127.0.0.1:8000/event">イベントページに戻る</a></p>
-    <p><a href="http://127.0.0.1:8000/makeevent">企画する</a></p>
-    <p><a href="http://127.0.0.1:8000/talk">トーク1の画面へ</a></p>
+<p>
+    <h1>Otetsudaizu!</h1>
+    <ul class="sample3">
+        <li><a href="http://127.0.0.1:8000/event"><p style="font-size:20px">戻る</p></a></li>
+        <li><a href="#"><p style="font-size:20px">困っている！</p></a></li>
+    </ul>
+    <h1>マイページ</h1>
+    <div class="card">
+        <img src="{% static "polls/images/hornet.jpeg"%}" width="500" height="300">
+        <div class="container">
+            <h4><b>Yuki_Matsushita</b></h4>
+            <p>20歳</p>
+            <p>男</p>
+        </div>
+    </div>
+    <p class="above">
+        <h2>私の企画</h2>
+                {% if events %}
+                    {% for event in events%}
+                    <p class="above">
+                        <div class="card">
+                            <img src="{% static "polls/images/bandaisan.jpg"%}" width="500" height="300">
+                            <div class="container">
+                                <h3 class="card-title">{{event.event_name}}</h3>
+                                <p class="card-title">場所：{{event.place}}</p>
+                                <p class="card-title">企画者：{{event.user}}</p>
+                                <p class="card-text">お礼：{{event.thanks}}</p>
+                            </div>
+                        </div>
+                    </p>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td></td>
+                    </tr>
+                {% endif %}
+    </p>
+    <h2>評価</h2>
+    <img src="{% static "polls/images/hosi.jpg"%}" width="500" height="600">
 </body>
